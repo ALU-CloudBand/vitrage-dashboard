@@ -1,5 +1,5 @@
 %global pypi_name vitrage-dashboard
-%global mod_name vitrage_dashboard
+%global mod_name vitragedashboard
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
@@ -48,6 +48,7 @@ mv vitragedashboard/enabled/_80_project_vitrage_panel_group.py %{buildroot}%{_sy
 mv vitragedashboard/enabled/_90_project_topology_vitrage_panel.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_90_project_topology_vitrage_panel.py
 mv vitragedashboard/enabled/_91_project_alarms_vitrage_panel.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_91_project_alarms_vitrage_panel.py
 mv vitragedashboard/enabled/_92_project_entities_vitrage_panel.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_92_project_entities_vitrage_panel.py
+ln -s %{_sysconfdir}/openstack-dashboard/enabled/_80_project_vitrage_panel_group.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_80_project_vitrage_panel_group.py
 ln -s %{_sysconfdir}/openstack-dashboard/enabled/_90_project_topology_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_90_project_topology_vitrage_panel.py
 ln -s %{_sysconfdir}/openstack-dashboard/enabled/_91_project_alarms_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_91_project_alarms_vitrage_panel.py.py
 ln -s %{_sysconfdir}/openstack-dashboard/enabled/_92_project_entities_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_92_project_entities_vitrage_panel.py
@@ -58,6 +59,8 @@ ln -s %{_sysconfdir}/openstack-dashboard/enabled/_92_project_entities_vitrage_pa
 %license LICENSE
 %{python2_sitelib}/%{mod_name}
 %{python2_sitelib}/*.egg-info
+%{python2_sitelib}/vitragealarms
+%{python2_sitelib}/vitrageentities
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_80_project_vitrage_panel_group.py*
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_90_project_topology_vitrage_panel.py*
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_91_project_alarms_vitrage_panel.py*
