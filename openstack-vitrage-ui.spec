@@ -61,6 +61,7 @@ ln -s %{_sysconfdir}/openstack-dashboard/enabled/_92_project_entities_vitrage_pa
 %{python2_sitelib}/*.egg-info
 %{python2_sitelib}/vitragealarms
 %{python2_sitelib}/vitrageentities
+%{python2_sitelib}/vitragetemplates
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_80_project_vitrage_panel_group.py*
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_90_project_topology_vitrage_panel.py*
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_91_project_alarms_vitrage_panel.py*
