@@ -16,7 +16,7 @@ BuildArch:      noarch
 BuildRequires:  python2-devel
 BuildRequires:  python-pbr
 BuildRequires:  python-sphinx
-BuildRequires:  python-oslo-sphinx
+BuildRequires:  python-oslo-sphinxopenstack-vitrage-ui-1.0.3-dev8.src.rpm
 
 Requires: python-babel
 Requires: openstack-dashboard
