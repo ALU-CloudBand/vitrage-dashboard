@@ -10,13 +10,13 @@ Summary:        Vitrage Management Dashboard
 
 License:        ASL 2.0
 URL:            https://github.com/openstack/vitrage-dashboard
-Source0:        http://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
+Source0:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 BuildArch:      noarch
 
 BuildRequires:  python2-devel
 BuildRequires:  python-pbr
 BuildRequires:  python-sphinx
-BuildRequires:  python-oslo-sphinxopenstack-vitrage-ui-1.0.3-dev8.src.rpm
+BuildRequires:  python-oslo-sphinx
 
 Requires: python-babel
 Requires: openstack-dashboard
@@ -31,8 +31,7 @@ Vitrage Management Dashboard
 %prep
 %setup -q -n vitrage-dashboard-%{upstream_version}
 # Remove bundled egg-info
-rm -rf %{pypi_name}.egg-info
-rm test-requirements.txt
+rm {test-,}requirements.txt
 
 %build
 %{__python2} setup.py build
