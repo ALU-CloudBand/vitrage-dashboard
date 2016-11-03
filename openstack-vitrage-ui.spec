@@ -1,11 +1,14 @@
 %global pypi_name vitrage-dashboard
 %global mod_name vitragedashboard
 
+%if 0%{?fedora}==0
+%global __python2 /usr/bin/python
+%endif
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           openstack-vitrage-ui
-Version:        XXX
-Release:        XXX
+Version:        1.0.2
+Release:        1
 Summary:        Vitrage Management Dashboard
 
 License:        ASL 2.0
@@ -30,7 +33,6 @@ Vitrage Management Dashboard
 
 %prep
 %setup -q -n vitrage-dashboard-%{upstream_version}
-# Remove bundled egg-info
 rm {test-,}requirements.txt
 
 %build
@@ -60,7 +62,6 @@ ln -s %{_sysconfdir}/openstack-dashboard/enabled/_92_project_entities_vitrage_pa
 %{python2_sitelib}/*.egg-info
 %{python2_sitelib}/vitragealarms
 %{python2_sitelib}/vitrageentities
-%{python2_sitelib}/vitragetemplates
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_80_project_vitrage_panel_group.py*
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_90_project_topology_vitrage_panel.py*
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_91_project_alarms_vitrage_panel.py*
