@@ -43,14 +43,18 @@ rm {test-,}requirements.txt
 # Move config to horizon
 mkdir -p  %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled
 mkdir -p  %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled
+
 mv vitragedashboard/enabled/_80_project_vitrage_panel_group.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_80_project_vitrage_panel_group.py
 mv vitragedashboard/enabled/_90_project_topology_vitrage_panel.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_90_project_topology_vitrage_panel.py
 mv vitragedashboard/enabled/_91_project_alarms_vitrage_panel.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_91_project_alarms_vitrage_panel.py
 mv vitragedashboard/enabled/_92_project_entities_vitrage_panel.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_92_project_entities_vitrage_panel.py
+mv vitragedashboard/enabled/_93_project_template_vitrage_panel.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_93_project_template_vitrage_panel.py
+
 ln -s %{_sysconfdir}/openstack-dashboard/enabled/_80_project_vitrage_panel_group.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_80_project_vitrage_panel_group.py
 ln -s %{_sysconfdir}/openstack-dashboard/enabled/_90_project_topology_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_90_project_topology_vitrage_panel.py
 ln -s %{_sysconfdir}/openstack-dashboard/enabled/_91_project_alarms_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_91_project_alarms_vitrage_panel.py
 ln -s %{_sysconfdir}/openstack-dashboard/enabled/_92_project_entities_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_92_project_entities_vitrage_panel.py
+ln -s %{_sysconfdir}/openstack-dashboard/enabled/_93_project_template_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_93_project_template_vitrage_panel.py
 
 
 %files
@@ -61,14 +65,18 @@ ln -s %{_sysconfdir}/openstack-dashboard/enabled/_92_project_entities_vitrage_pa
 %{python2_sitelib}/vitragealarms
 %{python2_sitelib}/vitrageentities
 %{python2_sitelib}/vitragetemplates
+
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_80_project_vitrage_panel_group.py*
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_90_project_topology_vitrage_panel.py*
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_91_project_alarms_vitrage_panel.py*
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_92_project_entities_vitrage_panel.py*
+%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_93_project_template_vitrage_panel.py*
+
 %{_sysconfdir}/openstack-dashboard/enabled/_80_project_vitrage_panel_group.py*
 %{_sysconfdir}/openstack-dashboard/enabled/_90_project_topology_vitrage_panel.py*
 %{_sysconfdir}/openstack-dashboard/enabled/_91_project_alarms_vitrage_panel.py*
 %{_sysconfdir}/openstack-dashboard/enabled/_92_project_entities_vitrage_panel.py*
+%{_sysconfdir}/openstack-dashboard/enabled/_93_project_template_vitrage_panel.py*
 
 
 %changelog
